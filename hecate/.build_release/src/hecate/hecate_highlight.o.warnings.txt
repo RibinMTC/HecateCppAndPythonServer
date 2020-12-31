@@ -1,0 +1,35 @@
+src/hecate/hecate_highlight.cpp: In function ‘void generate_highlight_clips(hecate_params&, std::vector<hecate::Range>&)’:
+src/hecate/hecate_highlight.cpp:511:60: warning: ignoring return value of ‘int system(const char*)’, declared with attribute warn_unused_result [-Wunused-result]
+         sprintf( cmd, "mv %s %s", infile, outfile ); system( cmd );
+                                                      ~~~~~~^~~~~~~
+src/hecate/hecate_highlight.cpp:591:9: warning: ignoring return value of ‘int system(const char*)’, declared with attribute warn_unused_result [-Wunused-result]
+   system( cmd );
+   ~~~~~~^~~~~~~
+In file included from ./include/hecate/hecate.hpp:44:0,
+                 from src/hecate/hecate_highlight.cpp:11:
+./include/hecate/ffmpeg_helper.hpp: In function ‘void hecate::ffmpeg_video_fade(std::__cxx11::string, std::__cxx11::string, int, bool)’:
+./include/hecate/ffmpeg_helper.hpp:114:11: warning: ignoring return value of ‘int system(const char*)’, declared with attribute warn_unused_result [-Wunused-result]
+     system( cmd );
+     ~~~~~~^~~~~~~
+./include/hecate/ffmpeg_helper.hpp: In function ‘void hecate::ffmpeg_audio_fade(std::__cxx11::string, std::__cxx11::string, double, double)’:
+./include/hecate/ffmpeg_helper.hpp:89:11: warning: ignoring return value of ‘int system(const char*)’, declared with attribute warn_unused_result [-Wunused-result]
+     system( cmd );
+     ~~~~~~^~~~~~~
+./include/hecate/ffmpeg_helper.hpp: In function ‘void hecate::ffmpeg_video_crop(std::__cxx11::string, std::__cxx11::string, std::__cxx11::string, std::__cxx11::string, int)’:
+./include/hecate/ffmpeg_helper.hpp:53:11: warning: ignoring return value of ‘int system(const char*)’, declared with attribute warn_unused_result [-Wunused-result]
+     system( cmd );
+     ~~~~~~^~~~~~~
+./include/hecate/ffmpeg_helper.hpp: In function ‘void hecate::ffmpeg_video_concat(std::__cxx11::string, std::__cxx11::string)’:
+./include/hecate/ffmpeg_helper.hpp:63:11: warning: ignoring return value of ‘int system(const char*)’, declared with attribute warn_unused_result [-Wunused-result]
+     system( cmd );
+     ~~~~~~^~~~~~~
+./include/hecate/ffmpeg_helper.hpp: In function ‘void hecate::ffmpeg_video2gif(std::__cxx11::string, std::__cxx11::string, std::__cxx11::string, std::__cxx11::string, int, int)’:
+./include/hecate/ffmpeg_helper.hpp:148:11: warning: ignoring return value of ‘int system(const char*)’, declared with attribute warn_unused_result [-Wunused-result]
+     system( cmd );
+     ~~~~~~^~~~~~~
+./include/hecate/ffmpeg_helper.hpp:154:11: warning: ignoring return value of ‘int system(const char*)’, declared with attribute warn_unused_result [-Wunused-result]
+     system( cmd );
+     ~~~~~~^~~~~~~
+./include/hecate/ffmpeg_helper.hpp:158:11: warning: ignoring return value of ‘int system(const char*)’, declared with attribute warn_unused_result [-Wunused-result]
+     system( cmd );
+     ~~~~~~^~~~~~~

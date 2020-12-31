@@ -1,0 +1,6 @@
+/hecate/.git
+/hecate/build/*
+/hecate/.build_release/*
+/hecate/distribute/*
+.git
+.gitignore

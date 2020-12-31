@@ -1,0 +1,5 @@
+{
+    "port": 5004,
+    "predictorClassName": "HecateContentMetricsPredictor",
+    "predictorModulePath": "src.hecate.hecate_content_metrics_predictor"
+}
