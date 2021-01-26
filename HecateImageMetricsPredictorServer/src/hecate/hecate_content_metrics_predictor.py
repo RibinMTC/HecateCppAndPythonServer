@@ -20,15 +20,17 @@ class HecateContentMetricsPredictor:
         if custom_hecate_executable_path is not None:
             self.__hecate_executable_path = custom_hecate_executable_path
         else:
-            self.__hecate_executable_path = "/imageMetricsPredictor/hecateCpp/distribute/bin/hecate_image_metric_test"
+            self.__hecate_executable_path = "/imageMetricsPredictor/hecateCpp/distribute/bin/hecate_image_metric_test" #"/local/home/cribin/Documents/AestheticsBackup/HecateCppAndPythonServer/hecate/distribute/bin/hecate_image_metric_test"
 
     def predict_content_metrics_debug(self, content_path, start_frame, end_frame):
-        result = subprocess.run([self.__hecate_executable_path, content_path, start_frame, end_frame], stdout=subprocess.PIPE)
+        result = subprocess.run([self.__hecate_executable_path, content_path, str(start_frame), str(end_frame)],
+                                stdout=subprocess.PIPE)
         predicted_image_metrics_str = str(result.stdout)
         print(predicted_image_metrics_str)
 
     def predict(self, content_path, start_frame, end_frame):
-        result = subprocess.run([self.__hecate_executable_path, content_path, start_frame, end_frame], stdout=subprocess.PIPE)
+        result = subprocess.run([self.__hecate_executable_path, content_path, str(start_frame), str(end_frame)],
+                                stdout=subprocess.PIPE)
         predicted_image_metrics_str = str(result.stdout)
         print("Hecate Output: " + predicted_image_metrics_str)
         if self.__validate_predicted_content_metrics(predicted_image_metrics_str):
@@ -43,7 +45,8 @@ class HecateContentMetricsPredictor:
     def __jsonify_results(self, predicted_content_metrics_str):
         split_content_metrics = predicted_content_metrics_str.split('\\n')
         if len(split_content_metrics) == 0:
-            print("Could not parse image metrics: " + predicted_content_metrics_str + ": correctly. Aborting prediction")
+            print(
+                "Could not parse image metrics: " + predicted_content_metrics_str + ": correctly. Aborting prediction")
             return
         # remove last element, as this is simply the dash character
         split_content_metrics.pop()
@@ -60,4 +63,3 @@ class HecateContentMetricsPredictor:
             content_metric_name_to_value_dict[content_metric_name] = content_metric_value
 
         return jsonify(content_metric_name_to_value_dict)
-
